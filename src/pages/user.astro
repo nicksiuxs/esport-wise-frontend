@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
+
+const response = await fetch(
+  `http://${import.meta.env.USER_API_IP}:${import.meta.env.USER_API_PORT}/user`
+);
+const data = await response.json();
+---
+
+<Layout title="Esport Wise App">
+  <main>
+    <Title title="Usuarios" />
+    <ul>
+      {
+        data.map((user) => (
+          <li>
+            <p>Nombre: {user.name}</p>
+            <p>Correo: {user.email}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 800px;
+      max-width: calc(100% - 2rem);
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</Layout>
