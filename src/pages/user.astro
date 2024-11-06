@@ -1,12 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
+import axiosInstance from "../axiosInstance";
 
-import CreateUser from "../components/CreateUser/CreateUser";
+const url = `http://${import.meta.env.USER_API_IP}:${import.meta.env.USER_API_PORT}/user`;
+console.log(url);
+const response = await fetch(url);
+const data = await response.json();
 ---
 
 <Layout title="Esport Wise App">
   <main>
-    <CreateUser client:only="react" />
+    <Title title="Usuarios" />
+    <ul>
+      {
+        data.map((user) => (
+          <li>
+            <p>Nombre: {user.name}</p>
+            <p>Correo: {user.email}</p>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 
   <style>
