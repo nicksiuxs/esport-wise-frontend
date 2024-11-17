@@ -28,11 +28,23 @@ const Header = () => {
             Torneos
           </a>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/login/" className="text-sm/6 font-semibold text-gray-900">
-            Iniciar sesión
-          </a>
-        </div>
+        {user.email ? (
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a
+              href="/login/"
+              className="text-sm/6 font-semibold text-gray-900 flex flex-col"
+            >
+              <span>{user.full_name}</span>
+              <span>{user.role}</span>
+            </a>
+          </div>
+        ) : (
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="/login/" className="text-sm/6 font-semibold text-gray-900">
+              Iniciar sesión
+            </a>
+          </div>
+        )}
       </nav>
     </header>
   );
