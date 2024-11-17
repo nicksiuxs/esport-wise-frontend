@@ -53,6 +53,12 @@ const Login = () => {
         />
         <button>Iniciar Sesion</button>
       </form>
+      <div>
+        <p>
+          No tienes una cuenta,{" "}
+          <a href="/create-user/">crea una nueva cuenta</a>
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,13 +1,5 @@
 import { create } from 'zustand';
-
-const initialState = {
-    id: null,
-    full_name: "",
-    birthdate: "",
-    username: "",
-    email: "",
-    role: "",
-}
+import { userInitialState as initialState } from '../utils/constants';
 
 const useUserStore = create((set) => ({
     user: initialState,
