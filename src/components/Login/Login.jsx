@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axiosInstance from "../../api/axiosInstance";
 import useUserStore from "../../store/useUserStore";
+import Input from "../Input/Input";
+import { Button } from "../Button/Button";
 
 const Login = () => {
   const { setUser } = useUserStore();
@@ -34,29 +36,51 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Iniciar Sesion</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Usuario"
-          value={login.email}
-          name="email"
-          onChange={handelOnChange}
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={login.password}
-          name="password"
-          onChange={handelOnChange}
-        />
-        <button>Iniciar Sesion</button>
-      </form>
-      <div>
-        <p>
-          No tienes una cuenta,{" "}
-          <a href="/create-user/">crea una nueva cuenta</a>
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 class="mt-10 text-center text-3xl/9 font-bold tracking-tight text-gray-900">
+          Esport Wise App
+        </h2>
+        <h3 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          Ingresa en tu cuenta
+        </h3>
+      </div>
+
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" onSubmit={handleSubmit}>
+          <div>
+            <Input
+              id="email"
+              type="email"
+              label="Ingrese su correo electronico"
+              value={login.email}
+              handleOnChange={handelOnChange}
+            />
+          </div>
+
+          <div>
+            <Input
+              id="password"
+              type="password"
+              label="Ingrese su contraseña"
+              value={login.password}
+              handleOnChange={handelOnChange}
+            />
+          </div>
+
+          <div>
+            <Button label="Iniciar Sesion" />
+          </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm/6 text-gray-500">
+          No tienes una cuenta?{" "}
+          <a
+            href="/create-user"
+            class="font-semibold text-indigo-600 hover:text-indigo-500"
+          >
+            Crea una cuenta aqui
+          </a>
         </p>
       </div>
     </div>
