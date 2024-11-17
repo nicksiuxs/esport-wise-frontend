@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LoginComponent from "../components/Login/Login.jsx";
+---
+
+<Layout title="Esport Wise App">
+  <main>
+    <LoginComponent client:only="react" />
+  </main>
+</Layout>
