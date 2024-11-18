@@ -20,7 +20,7 @@ const Input = ({
         </label>
       ) : null}
 
-      <div class="mt-2">
+      <div className="mt-2">
         {type !== "select" ? (
           <input
             id={id}

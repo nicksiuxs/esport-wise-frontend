@@ -1,0 +1,8 @@
+---
+import MeComponent from "../../components/Me/Me";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <MeComponent client:only="react" />
+</Layout>
