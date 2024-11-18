@@ -38,18 +38,18 @@ const CreateUser = () => {
   };
 
   return (
-    <div class="isolate bg-white px-6 py-12 sm:py-12 lg:px-8">
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 class="mt-10 text-center text-3xl/9 font-bold tracking-tight text-gray-900">
+    <div className="isolate bg-white px-6 py-12 sm:py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="mt-10 text-center text-3xl/9 font-bold tracking-tight text-gray-900">
           Esport Wise App
         </h2>
-        <h3 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+        <h3 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
           Crea tu cuenta
         </h3>
       </div>
-      <form onSubmit={handleSubmit} class="mx-auto mt-16 max-w-xl sm:mt-20">
-        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-          <div class="sm:col-span-2">
+      <form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div className="sm:col-span-2">
             <Input
               id="full_name"
               label="Nombre completo"
@@ -57,7 +57,7 @@ const CreateUser = () => {
               value={user.full_name}
             />
           </div>
-          <div class="sm:col-span-2">
+          <div className="sm:col-span-2">
             <Input
               id="username"
               label="Nombre de usuario"
@@ -65,7 +65,7 @@ const CreateUser = () => {
               value={user.username}
             />
           </div>
-          <div class="sm:col-span-2">
+          <div className="sm:col-span-2">
             <Input
               id="email"
               label="Correo electrónico"
@@ -74,7 +74,7 @@ const CreateUser = () => {
               value={user.email}
             />
           </div>
-          <div class="sm:col-span-2">
+          <div className="sm:col-span-2">
             <Input
               type="password"
               label="Contraseña"
@@ -83,7 +83,7 @@ const CreateUser = () => {
               handleOnChange={handleOnChange}
             />
           </div>
-          <div class="sm:col-span-2">
+          <div className="sm:col-span-2">
             <Input
               id="birthdate"
               label="Fecha de nacimiento"
@@ -92,7 +92,7 @@ const CreateUser = () => {
               value={user.birthdate}
             />
           </div>
-          <div class="sm:col-span-2">
+          <div className="sm:col-span-2">
             <Input
               type="select"
               label="Selecciona un rol"
@@ -103,7 +103,7 @@ const CreateUser = () => {
             />
           </div>
         </div>
-        <div class="mt-10">
+        <div className="mt-10">
           <Button label="Crea cuenta" />
         </div>
       </form>
