@@ -1,9 +1,10 @@
 ---
+import HomeComponent from "../components/Home/Home";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Esport Wise App</h1>
+    <HomeComponent client:only="react" />
   </main>
 </Layout>
