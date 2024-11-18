@@ -1,12 +1,13 @@
 import { useState } from "react";
 import axiosInstance from "../../api/axiosInstance";
+import Input from "../Input/Input";
 
 import {
   userInitialState as initalState,
   validRoles as roles,
 } from "../../utils/constants";
 
-import "./CreateUser.css";
+import { Button } from "../Button/Button";
 
 const CreateUser = () => {
   const [user, setUser] = useState(initalState);
@@ -37,55 +38,74 @@ const CreateUser = () => {
   };
 
   return (
-    <div>
-      <h1>Crea tu usuario</h1>
-      <form onSubmit={handleSubmit} className="create-user">
-        <input
-          type="text"
-          placeholder="Nombre completo"
-          name="full_name"
-          value={user.full_name}
-          onChange={handleOnChange}
-        />
-        <input
-          type="date"
-          placeholder="Fecha de nacimiento"
-          value={user.birthdate}
-          name="birthdate"
-          onChange={handleOnChange}
-        />
-        <input
-          type="text"
-          placeholder="Nombre de usuario"
-          value={user.username}
-          name="username"
-          onChange={handleOnChange}
-        />
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={user.email}
-          name="email"
-          onChange={handleOnChange}
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={user.password}
-          name="password"
-          onChange={handleOnChange}
-        />
-        <select value={user.role} name="role" onChange={handleOnChange}>
-          <option value="" hidden>
-            Selecciona un rol
-          </option>
-          {roles.map((role) => (
-            <option key={role.id} value={role.id}>
-              {role.value}
-            </option>
-          ))}
-        </select>
-        <button type="submit">Crear usuario</button>
+    <div class="isolate bg-white px-6 py-12 sm:py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 class="mt-10 text-center text-3xl/9 font-bold tracking-tight text-gray-900">
+          Esport Wise App
+        </h2>
+        <h3 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          Crea tu cuenta
+        </h3>
+      </div>
+      <form onSubmit={handleSubmit} class="mx-auto mt-16 max-w-xl sm:mt-20">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <Input
+              id="full_name"
+              label="Nombre completo"
+              handleOnChange={handleOnChange}
+              value={user.full_name}
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <Input
+              id="username"
+              label="Nombre de usuario"
+              handleOnChange={handleOnChange}
+              value={user.username}
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <Input
+              id="email"
+              label="Correo electrónico"
+              handleOnChange={handleOnChange}
+              type="email"
+              value={user.email}
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <Input
+              type="password"
+              label="Contraseña"
+              value={user.password}
+              id="password"
+              handleOnChange={handleOnChange}
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <Input
+              id="birthdate"
+              label="Fecha de nacimiento"
+              handleOnChange={handleOnChange}
+              type="date"
+              value={user.birthdate}
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <Input
+              type="select"
+              label="Selecciona un rol"
+              id="role"
+              handleOnChange={handleOnChange}
+              options={roles}
+              value={user.role}
+            />
+          </div>
+        </div>
+        <div class="mt-10">
+          <Button label="Crea cuenta" />
+        </div>
       </form>
     </div>
   );
