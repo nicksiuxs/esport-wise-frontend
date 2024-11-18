@@ -36,18 +36,18 @@ const Login = () => {
   };
 
   return (
-    <div classname="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-      <div classname="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 classname="mt-10 text-center text-3xl/9 font-bold tracking-tight text-gray-900">
+    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="mt-10 text-center text-3xl/9 font-bold tracking-tight text-gray-900">
           Esport Wise App
         </h2>
-        <h3 classname="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+        <h3 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
           Ingresa en tu cuenta
         </h3>
       </div>
 
-      <div classname="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form classname="space-y-6" onSubmit={handleSubmit}>
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <Input
               id="email"
@@ -73,11 +73,11 @@ const Login = () => {
           </div>
         </form>
 
-        <p classname="mt-10 text-center text-sm/6 text-gray-500">
+        <p className="mt-10 text-center text-sm/6 text-gray-500">
           No tienes una cuenta?{" "}
           <a
             href="/create-user"
-            classname="font-semibold text-indigo-600 hover:text-indigo-500"
+            className="font-semibold text-indigo-600 hover:text-indigo-500"
           >
             Crea una cuenta aqui
           </a>
