@@ -1,11 +1,10 @@
-import React from "react";
 import useUserStore from "../../store/useUserStore";
 
 const Header = () => {
   const user = useUserStore((state) => state.user);
-  console.log(user);
+
   return (
-    <header className="bg-white shadow">
+    <header className="bg-zinc-400 shadow">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -27,6 +26,9 @@ const Header = () => {
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
             Torneos
           </a>
+          {user.email ? (<a href="/team/" className="text-sm/6 font-semibold text-gray-900">
+            Mi equipo
+          </a>) :null}
         </div>
         {user.email ? (
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">

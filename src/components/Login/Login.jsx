@@ -26,6 +26,7 @@ const Login = () => {
         const data = response.data.data;
         setUser(data.user);
         localStorage.setItem("token", data.token);
+        window.location.href = '/team';
       } else {
         // Handle error response
         console.error("Failed to create user");
