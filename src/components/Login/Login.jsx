@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axiosInstance from "../../api/axiosInstance";
+import {axiosUser} from "../../api/axiosInstance";
 import useUserStore from "../../store/useUserStore";
 import Input from "../Input/Input";
 import { Button } from "../Button/Button";
@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axiosInstance.post("/login", login);
+      const response = await axiosUser.post("/login", login);
       if (response.status === 200) {
         // Handle successful response
 
