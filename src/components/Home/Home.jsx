@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import {axiosUser} from '../../api/axiosInstance';
+import {axiosTeam} from '../../api/axiosInstance';
 import { videogames } from '../../utils/constants';
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
 
     const getAllTeams = async () => {
         try {
-            const response = await axiosUser.get("/team");
+            const response = await axiosTeam.get("/team");
             if (response.status === 200) {
                 setTeams(response.data.data);
             }
