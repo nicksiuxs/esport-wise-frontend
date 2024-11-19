@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axiosInstance from "../../api/axiosInstance";
+import {axiosUser} from "../../api/axiosInstance";
 import Input from "../Input/Input";
 
 import {
@@ -16,7 +16,7 @@ const CreateUser = () => {
     event.preventDefault();
 
     try {
-      const response = await axiosInstance.post("/user", user);
+      const response = await axiosUser.post("/user", user);
       if (response.status === 201) {
         // Handle successful response
         console.log("User created successfully");
